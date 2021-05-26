@@ -2,4 +2,13 @@ from django.shortcuts import render, HttpResponse
 
 
 def home_view(request):
-    return HttpResponse('<b>Hoşgeldiniz</b>')
+    if request.user.is_authenticated:
+        context = {
+            'isim': 'Muhammet2',
+        }
+    else:
+        context = {
+            'isim': 'Misafir',
+        }
+
+    return render(request, 'home.html', context)
