@@ -1,8 +1,10 @@
 from django.db import models
 
-# Create your models here.
 
 class Post(models.Model):
-    title = models.CharField(max_length=120)
-    content = models.TextField()
-    publishing_date = models.DateTimeField()
+    title = models.CharField("Başlık", max_length=120)
+    content = models.TextField("İçerik")
+    publishing_date = models.DateTimeField("Yayımlanma Tarihi")
+
+    def __str__(self):
+        return self.title
