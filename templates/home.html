@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Merhaba,{{ isim }} Burası Anasayfa
-</body>
-</html>
+
+    {% extends 'base.html' %}
+    {% block title %} Anasayfa - {{block.super}}{% endblock %}
+    {% block body %}
+        Merhaba,{{ isim }} Burası Anasayfa
+    {% endblock %}
