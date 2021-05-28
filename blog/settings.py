@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3.Parti Uygulamalar
     'crispy_forms',
     'django_cleanup',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -121,8 +122,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-# STATIC ROOT aktif etmek için python manage.py collectstatic komutunu çalıştır.
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -130,7 +130,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'toolbar': 'full'
+        # 'height': '100%'
+        'width': '100%',
+    },
+}
