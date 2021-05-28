@@ -6,7 +6,8 @@
 - [x] Post Silme
 - [x] Crispy Form Düzenlemesi
 - [x] Cleanup Düzenlenmesi
-- [ ] User Yetkileri
+- [x] Misafir Yetkileri
+- [x] Postlar için Slug Yapısı
 - [ ] CKEditor
 
 ### Kullanılan 3. Parti Yazılımlar

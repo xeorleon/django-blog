@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, get_object_or_404, HttpRespon
 from .models import Post
 from .forms import PostForm
 from django.contrib import messages
-
+from django.utils.text import slugify
 
 # Create your views here.
 def post_index(request):
@@ -10,8 +10,8 @@ def post_index(request):
     return render(request, 'post/index.html', {'posts': posts})
 
 
-def post_detail(request, id):
-    post = get_object_or_404(Post, id=id)
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     context = {
         'post': post,
     }
@@ -49,11 +49,11 @@ def post_create(request):
     return render(request, 'post/form.html', context)
 
 
-def post_update(request, id):
+def post_update(request, slug):
     if not request.user.is_authenticated:
         raise Http404()
 
-    post = get_object_or_404(Post, id=id)
+    post = get_object_or_404(Post, slug=slug)
     form = PostForm(request.POST or None, request.FILES or None, instance=post)
     if form.is_valid():
         form.save()
@@ -65,11 +65,11 @@ def post_update(request, id):
     return render(request, 'post/form.html', context)
 
 
-def post_delete(request, id):
+def post_delete(request, slug):
     if not request.user.is_authenticated:
         raise Http404()
 
-    post = get_object_or_404(Post, id=id)
+    post = get_object_or_404(Post, slug=slug)
     post.delete()
     messages.success(request, 'Başarılı bir şekilde sildiniz.')
     return redirect('post:index')
