@@ -5,8 +5,11 @@
     <div class="container">
         <div class="row pt-3">
           {% for post in posts %}
-            <div class="col-md-6 col-sm-6 col-12">
+            <div class="col-md-6 col-sm-6 col-12 mt-2">
                 <div class="card" style="width:100%">
+                    {% if post.image %}
+                        <img class="card-img-top img-responsive" src="{{post.image.url}}" alt="Card image cap">
+                    {% endif %}
                   <div class="card-body">
                     <h5 class="card-title">{{ post.title }} - <small class="text-muted h-6">{{ post.publishing_date|timesince }} önce</small></h5>
                     <p class="card-text"> {{ post.content|linebreaks|truncatechars:100 }}</p>

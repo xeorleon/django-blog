@@ -36,7 +36,7 @@ def post_create(request):
     #    form = PostForm()
 
     # Refactor
-    form = PostForm(request.POST or None)
+    form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         post = form.save()
         messages.success(request, 'Başarılı bir şekilde oluşturdunuz.')
@@ -49,7 +49,7 @@ def post_create(request):
 
 def post_update(request, id):
     post = get_object_or_404(Post, id=id)
-    form = PostForm(request.POST or None, instance=post)
+    form = PostForm(request.POST or None, request.FILES or None, instance=post)
     if form.is_valid():
         form.save()
         messages.success(request, 'Başarılı bir şekilde güncellediniz.', extra_tags='mesaj-basarili')
@@ -63,5 +63,5 @@ def post_update(request, id):
 def post_delete(request, id):
     post = get_object_or_404(Post, id=id)
     post.delete()
-    messages.success(request, 'Başarılı bir şekilde oluşturdunuz.')
+    messages.success(request, 'Başarılı bir şekilde sildiniz.')
     return redirect('post:index')
