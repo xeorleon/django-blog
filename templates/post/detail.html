@@ -2,18 +2,16 @@
     {% extends 'base.html' %}
 
     {% block body %}
-
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    {{ post.id}}<br>
-    {{ post.title }}<br>
-    {{ post.content }}<br>
-    {{ post.publishing_date }}<br>
-
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-12 col-sm-12 col-12">
+                <div class="card" style="width:100%">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ post.title }} - <small class="text-muted h-6">{{ post.publishing_date|timesince }} önce</small></h5>
+                    <p class="card-text"> {{ post.content|linebreaks }}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
   {% endblock %}
