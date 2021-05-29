@@ -1,4 +1,5 @@
-# Django Blog!
+## Django Blog!
+#### Yapılanlar Listesi
 - [x] Post Liste Sayfası
 - [x] Post Detay
 - [x] Post Oluşturma
@@ -11,7 +12,13 @@
 - [x] CKEditor
 - [x] Yazar Post İlişkisi
 - [x] Yorum Ekleme
-- [ ] reCATPHA
+- [x] Google reCATPHA
+- [ ] Pagination Postlar için Sayfalama
+- [ ] Arama Özelliği
+- [ ] Kullanıcı Üye Girişi
+- [ ] Üye Olma
+- [ ] Kullanıcı Çıkış
+
 ### Kullanılan 3. Parti Yazılımlar
 
 
@@ -20,4 +27,5 @@
 > **Django Cleanup** 
 
 > **Django CKEditor** 
-> 
+
+> **Django reCAPTCHA** 
