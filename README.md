@@ -10,6 +10,8 @@
 - [x] Postlar için Slug Yapısı
 - [x] CKEditor
 - [x] Yazar Post İlişkisi
+- [x] Yorum Ekleme
+- [ ] reCATPHA
 ### Kullanılan 3. Parti Yazılımlar
 
 

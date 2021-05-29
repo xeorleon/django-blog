@@ -16,7 +16,18 @@
                             </div>
                         <p class="card-text"> {{ post.content|safe|linebreaks }}</p>
                     </div>
-                </div>
+                </div><br><br>
+                <hr>
+                <h4>Yorum Ekle </h4>
+                {% include 'post/comment.html' %}
+                <hr>
+
+                {% for comment in post.comments.all %}
+                    <h5>{{comment.name}} <small class="h6 text-muted"> | {{ comment.created_date|timesince}} önce</small></h5>
+                    <p>{{ comment.content|linebreaks }}</p>
+                    <hr>
+                {% endfor %}
+
             </div>
         </div>
     </div>
