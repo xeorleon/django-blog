@@ -2,8 +2,15 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
+from django.contrib.auth import get_user_model
+from django.conf import settings
+
+def get_sentinel_user():
+    return get_user_model().objects.get_or_create(username='deleted')
+
 
 class Post(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET(get_sentinel_user), verbose_name='Yazar', related_name='posts')
     title = models.CharField("Başlık", max_length=120)
     content = RichTextField('İçerik')
     publishing_date = models.DateTimeField("Yayımlanma Tarihi", auto_now_add=True)

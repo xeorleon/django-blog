@@ -40,7 +40,9 @@ def post_create(request):
     # Refactor
     form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-        post = form.save()
+        post = form.save(commit=False)
+        post.user = request.user
+        post.save()
         messages.success(request, 'Başarılı bir şekilde oluşturdunuz.')
         return HttpResponseRedirect(post.get_absolute_url())
     context = {

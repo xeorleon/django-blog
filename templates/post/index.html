@@ -11,7 +11,10 @@
                         <img class="card-img-top img-responsive" src="{{post.image.url}}" alt="Card image cap">
                     {% endif %}
                   <div class="card-body">
-                    <h5 class="card-title">{{ post.title }} - <small class="text-muted h-6">{{ post.publishing_date|timesince }} önce</small></h5>
+                      <div class="d-flex justify-content-between">
+                          <span class="card-title">{{ post.title }} - <small class="text-muted h-6">{{ post.publishing_date|timesince }} önce</small></span>
+                          <small class="text-muted">Yazar: {{ post.user.get_full_name }}</small>
+                      </div>
                     <p class="card-text"> {{ post.content|safe|linebreaks|truncatechars:100 }}</p>
                     <a href="{{post.get_absolute_url}}" class="btn btn-primary">İncele</a>
                       {% if request.user.is_authenticated %}

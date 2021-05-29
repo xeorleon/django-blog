@@ -9,7 +9,7 @@
 - [x] Misafir Yetkileri
 - [x] Postlar için Slug Yapısı
 - [x] CKEditor
-
+- [x] Yazar Post İlişkisi
 ### Kullanılan 3. Parti Yazılımlar
 
 
