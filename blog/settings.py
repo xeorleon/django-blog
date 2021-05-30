@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django_cleanup',
     'ckeditor',
     'captcha',
-    'django_heroku',
 ]
 
 MIDDLEWARE = [
