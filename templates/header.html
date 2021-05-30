@@ -25,8 +25,8 @@
           <a class="nav-link" href="{% url 'home' %}">İletişim</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Arama yapılıcak kelime" aria-label="Search">
+      <form class="d-flex" action="{% url 'post:index' %}">
+        <input class="form-control me-2" type="search" name="q" placeholder="Arama yapılıcak kelime" value="{{ request.GET.q }}" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Ara</button>
       </form>
     </div>

@@ -14,7 +14,7 @@
 - [x] Yorum Ekleme
 - [x] Google reCATPHA
 - [x] Pagination Postlar için Sayfalama
-- [ ] Arama Özelliği
+- [x] Arama Özelliği
 - [ ] Kullanıcı Üye Girişi
 - [ ] Üye Olma
 - [ ] Kullanıcı Çıkış

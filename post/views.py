@@ -3,11 +3,17 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, re
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import PostForm, CommentForm
 from .models import Post
-
+from django.db.models import Q
 
 # Create your views here.
 def post_index(request):
     posts_list = Post.objects.all()
+    query = request.GET.get('q')
+    if query:
+        posts_list = posts_list.filter(Q(title__icontains=query) |
+                                       Q(content__icontains=query) |
+                                       Q(user__first_name__icontains=query) |
+                                       Q(user__last_name__icontains=query)).distinct()
     paginator = Paginator(posts_list, 4)  # Show 5 posts per page.
     page = request.GET.get('page')
     try:

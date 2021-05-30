@@ -31,7 +31,7 @@
                       <ul class="pagination">
                             {% if posts.has_previous %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ posts.previous_page_number }}">Önceki</a>
+                                <a class="page-link" href="?page={{ posts.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">Önceki</a>
                             </li>
                           {% endif %}
                           {% for i in posts.paginator.page_range %}
@@ -39,7 +39,7 @@
                           {% endfor %}
                             {% if posts.has_next %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ posts.next_page_number }}">Sonraki</a>
+                                <a class="page-link" href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">Sonraki</a>
                             </li>
                           {% endif %}
                       </ul>
