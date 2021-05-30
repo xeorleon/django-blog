@@ -15,8 +15,8 @@
 - [x] Google reCATPHA
 - [x] Pagination Postlar için Sayfalama
 - [x] Arama Özelliği
-- [ ] Kullanıcı Üye Girişi
-- [ ] Üye Olma
+- [x] Kullanıcı Üye Girişi
+- [x] Üye Olma
 - [ ] Kullanıcı Çıkış
 
 ### Kullanılan 3. Parti Yazılımlar
