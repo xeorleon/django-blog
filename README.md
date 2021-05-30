@@ -17,7 +17,7 @@
 - [x] Arama Özelliği
 - [x] Kullanıcı Üye Girişi
 - [x] Üye Olma
-- [ ] Kullanıcı Çıkış
+- [x] Kullanıcı Çıkış
 
 ### Kullanılan 3. Parti Yazılımlar
 
