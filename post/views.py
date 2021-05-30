@@ -1,13 +1,23 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, redirect, Http404
-from .models import Post
-from .forms import PostForm, CommentForm
 from django.contrib import messages
-from django.utils.text import slugify
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect, Http404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import PostForm, CommentForm
+from .models import Post
 
 
 # Create your views here.
 def post_index(request):
-    posts = Post.objects.all()
+    posts_list = Post.objects.all()
+    paginator = Paginator(posts_list, 4)  # Show 5 posts per page.
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     return render(request, 'post/index.html', {'posts': posts})
 
 

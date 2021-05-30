@@ -141,5 +141,4 @@ CKEDITOR_CONFIGS = {
     },
 }
 RECAPTCHA_PUBLIC_KEY = '6LcgF_waAAAAAKbFVJsiDmfMpjnMTQcDfsqKSKuM'
-RECAPTCHA_PRIVATE_KEY = '6LcgF_waAAAAAKbFVJsiDmfMpjnMTQcDfsqKSKuM'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

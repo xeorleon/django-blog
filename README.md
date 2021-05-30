@@ -13,7 +13,7 @@
 - [x] Yazar Post İlişkisi
 - [x] Yorum Ekleme
 - [x] Google reCATPHA
-- [ ] Pagination Postlar için Sayfalama
+- [x] Pagination Postlar için Sayfalama
 - [ ] Arama Özelliği
 - [ ] Kullanıcı Üye Girişi
 - [ ] Üye Olma
