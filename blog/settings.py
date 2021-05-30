@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-aj7s(t=e6ebejaovd9p3f^@f1oa*s*138(8biehv#39m2o@$z@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-first-blog.herokuapp.com']
 
 # Application definition
 
@@ -142,3 +142,5 @@ CKEDITOR_CONFIGS = {
 }
 RECAPTCHA_PUBLIC_KEY = '6LcgF_waAAAAAKbFVJsiDmfMpjnMTQcDfsqKSKuM'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+HTTP_HOST = 'django-first-blog.herokuapp.com'
