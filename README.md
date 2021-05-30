@@ -19,11 +19,6 @@
 - [x] Üye Olma
 - [x] Kullanıcı Çıkış
 
-#### Eksikler
-    Kullacı isim ve soy ismiyle kayıt olma yapılmadı 
-    Yazarın Adı Gözükmemesinin Sebebi.
-
-    Anasayfa tasarımı yapılmadı    
 ### Kullanılan 3. Parti Yazılımlar
 
 
@@ -34,13 +29,3 @@
 > **Django CKEditor** 
 
 > **Django reCAPTCHA** 
-
-> **Whitenoise**
-
-> **Django Heroku**
-
-> **Gunicorn** 
-
-
-###Yayın Adresi
-[Django-Blog](https://django-first-blog.herokuapp.com/)
