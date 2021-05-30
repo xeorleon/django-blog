@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -144,3 +144,15 @@ RECAPTCHA_PUBLIC_KEY = '6LcgF_waAAAAAKbFVJsiDmfMpjnMTQcDfsqKSKuM'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 HTTP_HOST = 'django-first-blog.herokuapp.com'
+
+import django_heroku
+
+django_heroku.settings(locals())
+
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
