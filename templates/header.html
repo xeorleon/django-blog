@@ -29,6 +29,22 @@
         <input class="form-control me-2" type="search" name="q" placeholder="Arama yapılıcak kelime" value="{{ request.GET.q }}" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Ara</button>
       </form>
+
+      <ul class="navbar-nav mx-4">
+        {% if not request.user.is_authenticated %}
+        <li class="nav-item ">
+          <a class="btn btn-outline-success" href="{% url 'accounts:login' %}">Giriş Yap</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="btn btn-outline-success" href="{% url 'accounts:register' %}">Kayıt Ol</a>
+        </li>
+        {% else %}
+        <li class="nav-item mx-1">
+          <a class="btn btn-outline-success" href="{% url 'accounts:logout' %}">Çıkış Yap</a>
+        </li>
+        {% endif %}
+      </ul>
+
     </div>
   </div>
 </nav>
